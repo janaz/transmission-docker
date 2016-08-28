@@ -12,4 +12,5 @@ RUN mkdir -p /tmp/transmission && \
    make install-strip && \
    rm -rf /tmp/transmission
 
+ADD . /app
 USER nobody

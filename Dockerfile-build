@@ -18,7 +18,7 @@ RUN apt-get update && \
   libminiupnpc10 \
   libappindicator-dev \
   perl \
-  libjson-perl 
+  libjson-perl \
   && apt-get clean all
 
 ADD version.h /tmp/version.h

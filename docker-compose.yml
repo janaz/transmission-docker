@@ -6,3 +6,7 @@ services:
       - .:/app
     working_dir: /app
     command: bash
+    environment:
+      TR_QUEUE_STALLED_ENABLED: sdfewr
+      TR_RPC_PASSWORD: 'aa'
+      TR_ALT_SPEED_UP: '2342343'
