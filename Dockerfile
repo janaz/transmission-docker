@@ -12,5 +12,9 @@ RUN mkdir -p /tmp/transmission && \
    make install-strip && \
    rm -rf /tmp/transmission
 
+EXPOSE 9999 9999/udp 8080
+
 ADD . /app
-USER nobody
+WORKDIR /app
+CMD /app/run
+USER 5000

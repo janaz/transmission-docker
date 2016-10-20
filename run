@@ -1,1 +1,23 @@
 #!/bin/bash -e
+
+mkdir -p /tmp/home
+
+mkdir -p /data/blocklists
+mkdir -p /data/resume
+mkdir -p /data/torrents
+mkdir -p /data/done
+mkdir -p /data/incomplete
+
+ln -snf /data/blocklists /tmp/home/blocklists
+ln -snf /data/resume /tmp/home/resume
+ln -snf /data/torrents /tmp/home/torrents
+
+echo test > /data/blocklists/.test
+echo test > /data/resume/.test
+echo test > /data/torrents/.test
+echo test > /data/done/.test
+echo test > /data/incomplete/.test
+
+./make_config.pl > /tmp/home/settings.json
+
+exec transmission-daemon -g /tmp/home -f --log-info
