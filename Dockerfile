@@ -1,11 +1,7 @@
-FROM ubuntu:xenial-20170119
-
-RUN /bin/echo -e "deb http://ppa.launchpad.net/transmissionbt/ppa/ubuntu xenial main\ndeb-src http://ppa.launchpad.net/transmissionbt/ppa/ubuntu xenial main" > /etc/apt/sources.list.d/transmission.list && \
-  apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 365C5CA1
-
+FROM debian:sid-slim
 RUN apt-get update && \
   apt-get -y install \
-    transmission-daemon=2.92-1ubuntu1~16.104.2 \
+    transmission-daemon=2.92-2 \
     perl \
     libjson-perl \
   && apt-get -y clean all
