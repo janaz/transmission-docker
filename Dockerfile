@@ -2,6 +2,7 @@ FROM debian:sid-slim
 RUN apt-get update && \
   apt-get -y install \
     transmission-daemon=2.92-2 \
+    curl \
     perl \
     libjson-perl \
   && apt-get -y clean all
